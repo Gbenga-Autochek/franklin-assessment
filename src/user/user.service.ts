@@ -14,6 +14,7 @@ export class UserService {
   // Create a new user
   async createUser(userData: Partial<User>): Promise<User> {
     console.log("userData", userData)
+        // No validation on the data coming in
     const user = this.userRepository.create({  ...userData});
 
     return this.userRepository.save(user);
@@ -22,5 +23,7 @@ export class UserService {
   // Get a user by ID
   async getUserById(id: number): Promise<User> {
     return this.userRepository.findOneBy({ id });
+    // There is not enough info for the client when the user is not found
+    // wrong status code is returned
   }
 }

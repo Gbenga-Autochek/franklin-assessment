@@ -32,6 +32,7 @@ export class RapidService {
         this.httpService.request(options),
       );
 
+      // Optional chaining would suffice here
       if (response && response.data) {
         console.log("response", response);
         return response.data; // Access the actual data from the response

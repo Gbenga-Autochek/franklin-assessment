@@ -10,6 +10,9 @@ import { Valuation } from './entities/valuation.entity'; // Import the Valuation
 @Injectable()
 export class ValuationService {
   constructor(
+    // ValuationService should not be aware of the vehicle repository
+    // Violates the single responsibility principle
+    // Instead the ValuationService should depend on the vehicle service
     @InjectRepository(Vehicle)
     private vehicleRepository: Repository<Vehicle>,
     

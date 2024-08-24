@@ -6,6 +6,7 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { User } from 'src/user/entities/user.entity';
 import { ValuationService } from 'src/valuation/valuation.service';
 import { Vehicle } from 'src/vehicle/entities/vehicle.entity';
+// unused imports
 import { LOAN_STATUS, Loan } from './entities/loan.entity';
 import { LoanService } from './loan.service';
 

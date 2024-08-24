@@ -25,6 +25,7 @@ export class LoanController {
   }
 
   @Patch('reject/:id')
+  // I don't think this is the correct way to pass the rejection reason
   async reject(@Param('id') loanId: number, @Body() rejectionReason: string): Promise<Loan> {
     return this.loanService.rejectLoanApplication(loanId, rejectionReason);
   }
