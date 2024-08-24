@@ -23,6 +23,10 @@ import { RapidService } from 'src/integration/rapid.service';
       ]),
       HttpModule,
   ],
+  // the integration should be it's own module which includes the rapid service 
+  // and the loan module should import the integration module instead
+  // what the candidate impl means is that to use the rapid service anywhere else in the app 
+  // you would need to import the loan module which is not ideal
   providers: [LoanService, ValuationService, RapidService ],
   controllers: [LoanController],
   exports: [LoanService, ValuationService, RapidService],

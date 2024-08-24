@@ -15,6 +15,9 @@ export class LoanService {
   constructor(
     @InjectRepository(Loan)
     private readonly loanRepository: Repository<Loan>,
+    // Wrong pattern. This service should not be aware of another repository asides from the loan repository
+    // This is a violation of the single responsibility principle
+    // Instead the loan service should depend on the user service and the vehicle service
     @InjectRepository(Vehicle)
     private readonly vehicleRepository: Repository<Vehicle>,
     @InjectRepository(User)
